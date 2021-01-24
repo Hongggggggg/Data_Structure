@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*二分法*/
-/*左闭右开[left, right)*/
+/*左闭右闭[left, right]*/
 int find_index(int* array, unsigned int len, int target)
 {
     if(array == NULL)
