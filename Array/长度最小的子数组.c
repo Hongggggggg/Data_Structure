@@ -12,7 +12,7 @@ uint8_t minSubArrayLen(uint8_t* array, uint8_t len, uint8_t val)
     for(uint8_t i = 0; i < len; i++)
     {
         sum += *(array + i);
-        while(sum > val)
+        while(sum >= val)
         {
             win_len = i - left_pos + 1;
             rst = win_len < rst ? win_len : rst;
@@ -25,7 +25,7 @@ uint8_t minSubArrayLen(uint8_t* array, uint8_t len, uint8_t val)
 
 void main(void)
 {
-    uint8_t array[] = {2, 3, 1, 2, 4, 3, 7, 7, 1, 3, 2, 4};
+    uint8_t array[] = {2, 3, 1, 2, 4, 8, 7, 7, 1, 3, 2, 4};
     uint8_t rst = minSubArrayLen(array, sizeof(array) / sizeof(uint8_t), 15);
     printf("%d\r\n", rst);
 }
